@@ -1,0 +1,43 @@
+
+const database = 'fe_crud';
+
+use(database);
+
+db.manufacturers.drop()
+
+db.createCollection('manufacturers', {
+  validator: {
+    $jsonSchema: {
+      bsonType: 'object',
+      required: ["name"],
+      properties: {
+        name: {
+          bsonType: 'string',
+          minLength: 1,
+          maxLength: 255,
+        },
+        address: {
+          bsonType: 'object',
+          properties: {
+            country: {
+              bsonType: 'string',
+            },
+            city: {
+              bsonType: 'string',
+            },
+          }
+        }
+      }
+    }
+  }
+})
+
+db.manufacturers.insertMany([{
+  name: "a",
+  "address": {
+    "country": "Ukraine",
+    "city": "Kiev",
+    "street": "Doroshenko"
+  }
+}
+])
