@@ -3,26 +3,27 @@ const { Schema } = require("mongoose");
 module.exports = new Schema(
   {
     firstName: {
-      type: "string",
+      type: String,
       required: true,
     },
     lastName: {
-      type: "string",
+      type: String,
       required: true,
     },
     email: {
-      type: "string",
+      type: String,
       unique: true,
     },
     isMale: {
-      type: "boolean",
+      type: Boolean,
       required: true,
     },
     birthday: {
-      type: "date",
+      type: Date,
     },
   },
   {
+    versionKey: false,
     timestamps: true,
   }
 );
