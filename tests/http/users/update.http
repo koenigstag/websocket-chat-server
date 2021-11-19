@@ -1,6 +1,6 @@
-PATCH http://localhost:5000/api/users/ObjectIdString
+PUT http://localhost:5000/api/users/6197f13b0d10347ed2bed229
 Content-Type: application/json
 
 {
-    "email": "unique.mail@gmail.com",
+    "email": "mail4@gmail.com"
 }
