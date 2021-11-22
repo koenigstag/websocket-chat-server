@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 app.use("/api", rootRouter);
 
 app.use((err, req, res, next) => {
-  res.status(500).send(err) // VERY BAD error handler
-})
+  res.status(500).send(err); // VERY BAD error handler
+});
 
 module.exports = app;
