@@ -2,6 +2,7 @@ const http = require("http");
 const app = require("./app");
 const { Server } = require("socket.io");
 const config = require("./configs");
+const { EVENTS } = require("./configs/socket.io");
 
 const PORT = config.PORT || 5000;
 
@@ -9,6 +10,7 @@ const httpServer = http.createServer(app);
 
 const io = new Server(httpServer, {
   /* options */
+  cors: "*",
 });
 
 io.on("connection", (socket) => {
@@ -18,8 +20,9 @@ io.on("connection", (socket) => {
     console.log("reason of disconneting", reason);
   });
 
-  socket.on("new_message", (data) => {
-    socket.emit("new_message", data);
+  socket.on(EVENTS.NEW_MESSAGE, (data) => {
+    console.log("new msg", data);
+    socket.emit(EVENTS.NEW_MESSAGE, data);
   });
 });
 
