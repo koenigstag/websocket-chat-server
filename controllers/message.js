@@ -20,10 +20,6 @@ module.exports.getAllMsgs = async (req, res, next) => {
 
 module.exports.createMsg = async (req, res, next) => {
   try {
-    // req.body.author = req.params.userId;
-
-    console.log("create ", req.params.userId);
-
     const createdMsg = await Message.create({
       ...req.body,
       author: req.params.userId,
