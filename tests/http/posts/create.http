@@ -1,6 +1,0 @@
-POST http://localhost:5000/api/users/ObjectIdString/posts HTTP/1.1
-Content-Type: application/json
-
-{
-    "body": "my post"
-}

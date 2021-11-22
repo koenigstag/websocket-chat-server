@@ -1,0 +1,6 @@
+POST http://localhost:5000/api/users/messages/6197f13b0d10347ed2bed229 HTTP/1.1
+Content-Type: application/json
+
+{
+    "text": "my msg"
+}
