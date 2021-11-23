@@ -9,15 +9,6 @@ module.exports.getAllUsers = async (req, res, next) => {
   }
 };
 
-module.exports.createUser = async (req, res, next) => {
-  try {
-    const createdUser = await User.create(req.body);
-    res.send(createdUser);
-  } catch (error) {
-    next(error);
-  }
-};
-
 module.exports.updateUser = async (req, res, next) => {
   try {
     const updatedUser = await User.findByIdAndUpdate(
